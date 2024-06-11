@@ -1,0 +1,12 @@
+syntax = "proto3";
+package titan.titan;
+
+import "gogoproto/gogo.proto";
+import "titan/titan/params.proto";
+
+option go_package = "titan/x/titan/types";
+
+// GenesisState defines the titan module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+}
