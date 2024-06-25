@@ -1,5 +1,5 @@
 {
-  "genesis_time": "2024-06-24T10:30:00.000000000Z",
+  "genesis_time": "2024-06-25T04:30:00.000000000Z",
   "chain_id": "titan-test-1",
   "initial_height": "1",
   "consensus_params": {
@@ -36,7 +36,7 @@
       "accounts": [
         {
           "@type": "/cosmos.auth.v1beta1.BaseAccount",
-          "address": "titan1nky90s0at2ufhs7kv74prna70hdrkt0r74quz7",
+          "address": "titan1zr7yuhghh2gtdrqcy7dzc06rhdcfmd2rud4d8f",
           "pub_key": null,
           "account_number": "0",
           "sequence": "0"
@@ -53,7 +53,7 @@
       },
       "balances": [
         {
-          "address": "titan1nky90s0at2ufhs7kv74prna70hdrkt0r74quz7",
+          "address": "titan1zr7yuhghh2gtdrqcy7dzc06rhdcfmd2rud4d8f",
           "coins": [
             {
               "denom": "uttnt",
@@ -153,19 +153,19 @@
                   "max_change_rate": "0.010000000000000000"
                 },
                 "min_self_delegation": "1",
-                "delegator_address": "titan1nky90s0at2ufhs7kv74prna70hdrkt0r74quz7",
-                "validator_address": "titanvaloper1nky90s0at2ufhs7kv74prna70hdrkt0rqp9e60",
+                "delegator_address": "titan1zr7yuhghh2gtdrqcy7dzc06rhdcfmd2rud4d8f",
+                "validator_address": "titanvaloper1zr7yuhghh2gtdrqcy7dzc06rhdcfmd2rzesglc",
                 "pubkey": {
                   "@type": "/cosmos.crypto.ed25519.PubKey",
-                  "key": "9DoHfvYbwYas5VdO5+mlDKcXt3lImK9CZOy51qHQBVg="
+                  "key": "REZxkDAAQu4QJLynWMF0MZI4APx6jKFa8Ko9EJg7Y0M="
                 },
                 "value": {
                   "denom": "uttnt",
-                  "amount": "100000000"
+                  "amount": "900000000000000"
                 }
               }
             ],
-            "memo": "00e55b4b2a317d7df14d29d5aecc5874ee097dfb@47.76.107.159:26656",
+            "memo": "bb075c8cc4b7032d506008b68d4192298a09aeea@47.76.107.159:26656",
             "timeout_height": "0",
             "extension_options": [],
             "non_critical_extension_options": []
@@ -175,7 +175,7 @@
               {
                 "public_key": {
                   "@type": "/cosmos.crypto.secp256k1.PubKey",
-                  "key": "AqI9VY3m1EAdAp//EThaPsig/IQoMQU8UwbHXWLvF1xa"
+                  "key": "ApRCr9U5kR6ImLe4PPCL0DGHzPTYr/kEefpn7ucEq3A0"
                 },
                 "mode_info": {
                   "single": {
@@ -194,7 +194,7 @@
             "tip": null
           },
           "signatures": [
-            "L+Gqoktvh+BijWZNArS1YrMvou06S/vHm6sdnDpK0mkM5rQYucCCEVVuXG4M4lN8RNYN/HhM5UB/O+i9VHEF7g=="
+            "U4MDeNct/PZ96z4y4DXRaJ1dpnXB9914rTxT+Al5BvNwYc1uRxE+7Q5S224YDZJGP3yyHqBJgo1w/sJ0Nvuf1Q=="
           ]
         }
       ]
