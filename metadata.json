@@ -1,7 +1,7 @@
 {
-  "name": "titan network",
+  "name": "Titan Network",
   "website": "https://www.titannet.io/",
   "description": "New incentive layer for global idle resources",
-  "logo": "https://github.com/chainapsis/keplr-chain-registry/blob/main/images/titan-test/chain.png",
+  "logo": "https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/5fcb5dfeba1cd12d9e44686e91c5b1bc017d2bab/images/titan-test/chain.png",
   "twitter": "https://twitter.com/Titannet_dao"
 }
