@@ -9,9 +9,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmWasm/wasmd/x/wasm/ioutils"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/testdata"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/ioutils"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/testdata"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestParseVerificationFlags(t *testing.T) {

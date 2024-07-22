@@ -45,8 +45,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/staking/testutil"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/CosmWasm/wasmd/app"
-	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/app"
+	wasmkeeper "github.com/Titannet-dao/titan-chain/x/wasm/keeper"
 )
 
 var MaxAccounts = 10

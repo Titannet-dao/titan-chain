@@ -32,7 +32,7 @@ import (
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
+	wasmtypes "github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 // SimAppChainID hardcoded chainID for simulation

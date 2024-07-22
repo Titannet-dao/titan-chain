@@ -7,7 +7,7 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 
-	"github.com/CosmWasm/wasmd/app"
+	"github.com/Titannet-dao/titan-chain/app"
 )
 
 func main() {

@@ -15,9 +15,9 @@ import (
 	distributiontypes "github.com/cosmos/cosmos-sdk/x/distribution/types"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	"github.com/CosmWasm/wasmd/app"
-	"github.com/CosmWasm/wasmd/tests/e2e"
-	"github.com/CosmWasm/wasmd/x/wasm/ibctesting"
+	"github.com/Titannet-dao/titan-chain/app"
+	"github.com/Titannet-dao/titan-chain/tests/e2e"
+	"github.com/Titannet-dao/titan-chain/x/wasm/ibctesting"
 )
 
 func TestGovVoteByContract(t *testing.T) {

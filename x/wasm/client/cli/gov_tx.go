@@ -22,8 +22,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/gov/client/cli"
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 
-	"github.com/CosmWasm/wasmd/x/wasm/ioutils"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/ioutils"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 // DefaultGovAuthority is set to the gov module address.
@@ -747,7 +747,7 @@ func ProposalUpdateInstantiateConfigCmd() *cobra.Command {
 		Long: strings.TrimSpace(
 			fmt.Sprintf(`Submit an update instantiate config  proposal for multiple code ids.
 
-Example: 
+Example:
 $ %s tx gov submit-proposal update-instantiate-config 1:nobody 2:everybody 3:%s1l2rsakp388kuv9k8qzq6lrm9taddae7fpx59wm,%s1vx8knpllrj7n963p9ttd80w47kpacrhuts497x
 `, version.AppName, bech32Prefix, bech32Prefix)),
 		RunE: func(cmd *cobra.Command, args []string) error {

@@ -20,9 +20,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/address"
 
-	"github.com/CosmWasm/wasmd/app"
-	wasmibctesting "github.com/CosmWasm/wasmd/x/wasm/ibctesting"
-	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/app"
+	wasmibctesting "github.com/Titannet-dao/titan-chain/x/wasm/ibctesting"
+	wasmtypes "github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestIBCFeesTransfer(t *testing.T) {

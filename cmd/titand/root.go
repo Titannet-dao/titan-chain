@@ -20,10 +20,10 @@ import (
 	txmodule "github.com/cosmos/cosmos-sdk/x/auth/tx/config"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	"github.com/CosmWasm/wasmd/app"
-	"github.com/CosmWasm/wasmd/app/params"
-	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
-	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/app"
+	"github.com/Titannet-dao/titan-chain/app/params"
+	wasmkeeper "github.com/Titannet-dao/titan-chain/x/wasm/keeper"
+	wasmtypes "github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 // NewRootCmd creates a new root command for wasmd. It is called once in the

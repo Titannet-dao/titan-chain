@@ -1,4 +1,4 @@
-module github.com/CosmWasm/wasmd
+module github.com/Titannet-dao/titan-chain
 
 go 1.21
 

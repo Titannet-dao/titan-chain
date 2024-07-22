@@ -18,10 +18,10 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmWasm/wasmd/app"
-	"github.com/CosmWasm/wasmd/tests/e2e"
-	wasmibctesting "github.com/CosmWasm/wasmd/x/wasm/ibctesting"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/app"
+	"github.com/Titannet-dao/titan-chain/tests/e2e"
+	wasmibctesting "github.com/Titannet-dao/titan-chain/x/wasm/ibctesting"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestIBCCallbacks(t *testing.T) {

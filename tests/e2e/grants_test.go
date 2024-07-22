@@ -19,9 +19,9 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/cosmos/cosmos-sdk/x/authz"
 
-	"github.com/CosmWasm/wasmd/tests/e2e"
-	"github.com/CosmWasm/wasmd/x/wasm/ibctesting"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/tests/e2e"
+	"github.com/Titannet-dao/titan-chain/x/wasm/ibctesting"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestGrants(t *testing.T) {

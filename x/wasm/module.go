@@ -25,11 +25,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/CosmWasm/wasmd/x/wasm/client/cli"
-	"github.com/CosmWasm/wasmd/x/wasm/exported"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper"
-	"github.com/CosmWasm/wasmd/x/wasm/simulation"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/client/cli"
+	"github.com/Titannet-dao/titan-chain/x/wasm/exported"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/x/wasm/simulation"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 var (

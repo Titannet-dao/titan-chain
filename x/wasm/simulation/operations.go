@@ -18,10 +18,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/tx"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
-	"github.com/CosmWasm/wasmd/app/params"
-	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/testdata"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/app/params"
+	wasmkeeper "github.com/Titannet-dao/titan-chain/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/testdata"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 // Simulation operation weights constants

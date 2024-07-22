@@ -18,8 +18,8 @@ import (
 	v1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	"github.com/cosmos/cosmos-sdk/x/gov/types/v1beta1"
 
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/testdata"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/testdata"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestLoadStoredGovV1Beta1LegacyTypes(t *testing.T) {

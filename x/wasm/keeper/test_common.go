@@ -76,10 +76,10 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	wasmappparams "github.com/CosmWasm/wasmd/app/params"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/testdata"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/wasmtesting"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	wasmappparams "github.com/Titannet-dao/titan-chain/app/params"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/testdata"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/wasmtesting"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 var moduleBasics = module.NewBasicManager(

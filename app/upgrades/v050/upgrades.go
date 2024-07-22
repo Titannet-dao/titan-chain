@@ -9,7 +9,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/CosmWasm/wasmd/app/upgrades"
+	"github.com/Titannet-dao/titan-chain/app/upgrades"
 )
 
 // UpgradeName defines the on-chain upgrade name
