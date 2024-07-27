@@ -10,7 +10,7 @@ systemctl stop titan
 mv ~/.titan ~/titan_bak
 
 # Copy directory and other information to the new path
-rsync -av --exclude "data" ~/titan_bak ~/.titan
+rsync -av --exclude "data" ~/titan_bak/* ~/.titan
 
 # Delete existing executable program
 # shellcheck disable=SC2046
