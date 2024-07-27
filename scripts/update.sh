@@ -21,9 +21,7 @@ tar -zxvf ~/titan_chain_v2.0.0_linux_amd.tar.gz  --strip-components 1 -C /usr/lo
 rm ~/titan_chain_v2.0.0_linux_amd.tar.gz
 
 # Download new genesis file
-# 替换下载链接
-#wget -P ~/. https://github.com/Titannet-dao/titan-node/releases/download/v0.1.19/titan-l2edge_v0.1.19_patch_linux_amd64.tar.gz
-cp ~/bakbak/genesis.json ~/genesis.json
+#wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
 
 # Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
