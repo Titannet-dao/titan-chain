@@ -1,44 +1,45 @@
 #!/bin/bash
 
-# 进入用户目录
+# Enter user directory
 cd ~ || exit
 
-# 停止当前 titan 程序
+# Stop old titan program
 systemctl stop titan
 
-# 备份 titan 目录,如果中间出错,可以使用备份恢复后重新执行
+# Back up the .titan directory. If something goes wrong in the middle, you can use the backup to restore and then execute again.
 cp -r ~/.titan ~/titan_bak
 
-# 删除现有可执行程序
+# Delete existing executable program
 # shellcheck disable=SC2046
 rm $(which titand)
 
-# 下载新可执行程序
+# Download new executable program
 wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v2.0.0/titan_chain_v2.0.0_linux_amd.tar.gz
-# 解压缩可执行程序到全局目录中
+# Unzip the executable program into the global directory
 tar -zxvf ~/titan_chain_v2.0.0_linux_amd.tar.gz  --strip-components 1 -C /usr/local/bin
-# 删除下载的包
+# Delete downloaded packages
 rm ~/titan_chain_v2.0.0_linux_amd.tar.gz
 
+# Download new genesis file
 # 替换下载链接
 #wget -P ~/. https://github.com/Titannet-dao/titan-node/releases/download/v0.1.19/titan-l2edge_v0.1.19_patch_linux_amd64.tar.gz
 cp ~/bakbak/genesis.json ~/genesis.json
 
-# 替换新创世文件
+# Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
 
-# 删除旧链数据目录
+# Delete old chain data directory
 rm -r ~/.titan/data
-# 创建新链数据目录
+# Create a new chain data directory
 mkdir ~/.titan/data
-# 构建 data/priv_validator_state.json 文件
+# Build data/priv_validator_state.json 文件
 echo '{
   "height": "0",
   "round": 0,
   "step": 0
 }' > ~/.titan/data/priv_validator_state.json
 
-# 更新 config/client  中的 chain-id
+# Update config/client.toml chain-id
 echo '# This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
 
@@ -57,5 +58,5 @@ node = "tcp://localhost:26657"
 # Transaction broadcasting mode (sync|async)
 broadcast-mode = "sync"' > ~/.titan/config/client.toml
 
-# 启动新的titan 程序
+# Start a new titan program
 systemctl start titan
