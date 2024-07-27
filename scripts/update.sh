@@ -7,7 +7,10 @@ cd ~ || exit
 systemctl stop titan
 
 # Back up the .titan directory. If something goes wrong in the middle, you can use the backup to restore and then execute again.
-cp -r ~/.titan ~/titan_bak
+mv ~/.titan ~/titan_bak
+
+# Copy directory and other information to the new path
+rsync -av --exclude "data" ~/titan_bak ~/.titan
 
 # Delete existing executable program
 # shellcheck disable=SC2046
@@ -26,9 +29,7 @@ wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/gene
 # Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
 
-# Delete old chain data directory
-rm -r ~/.titan/data
-# Create a new chain data directory
+
 mkdir ~/.titan/data
 # Build data/priv_validator_state.json 文件
 echo '{
