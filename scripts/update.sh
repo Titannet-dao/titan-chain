@@ -21,7 +21,7 @@ tar -zxvf ~/titan_chain_v2.0.0_linux_amd.tar.gz  --strip-components 1 -C /usr/lo
 rm ~/titan_chain_v2.0.0_linux_amd.tar.gz
 
 # Download new genesis file
-#wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
+wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
 
 # Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
