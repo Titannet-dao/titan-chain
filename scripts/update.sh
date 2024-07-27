@@ -1,15 +1,17 @@
 #!/bin/bash
 
-cd ~
+cd ~ || exit
 
 systemctl stop titan
 cp -r ~/.titan ~/titan_bak
 
+# shellcheck disable=SC2046
 rm $(which titand)
 
 #下载
 wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v2.0.0/titan_chain_v2.0.0_linux_amd.tar.gz
 tar -zxvf ~/titan_chain_v2.0.0_linux_amd.tar.gz  --strip-components 1 -C /usr/local/bin
+rm ~/titan_chain_v2.0.0_linux_amd.tar.gz
 
 # 替换下载链接
 #wget -P ~/. https://github.com/Titannet-dao/titan-node/releases/download/v0.1.19/titan-l2edge_v0.1.19_patch_linux_amd64.tar.gz
