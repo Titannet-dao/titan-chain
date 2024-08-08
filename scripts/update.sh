@@ -12,7 +12,7 @@ mv ~/.titan ~/titan_bak_08_08_02
 # Copy directory and other information to the new path
 rsync -av --exclude "data" ~/titan_bak_08_08_02/* ~/.titan
 
-wget -P ~/. https://github.com/Titannet-dao/titan-chain/blob/main/addrbook/addrbook.json
+wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/addrbook/addrbook.json
 
 mv ~/addrbook.json ~/.titan/config/addrbook.json
 
