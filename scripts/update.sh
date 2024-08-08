@@ -7,10 +7,10 @@ cd ~ || exit
 systemctl stop titan
 
 # Back up the .titan directory. If something goes wrong in the middle, you can use the backup to restore and then execute again.
-mv ~/.titan ~/titan_bak_08_08
+mv ~/.titan ~/titan_bak_08_08_01
 
 # Copy directory and other information to the new path
-rsync -av --exclude "data" ~/titan_bak_08_08/* ~/.titan
+rsync -av --exclude "data" ~/titan_bak_08_08_01/* ~/.titan
 
 # Download new genesis file
 wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/test/genesis/genesis.json
@@ -26,3 +26,4 @@ echo '{
   "step": 0
 }' > ~/.titan/data/priv_validator_state.json
 
+systemctl start titan
