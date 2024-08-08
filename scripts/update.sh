@@ -30,9 +30,6 @@ echo '{
   "step": 0
 }' > ~/.titan/data/priv_validator_state.json
 
-
-systemctl start titan
-
 # Update config/client.toml chain-id
 echo '# This is a TOML config file.
 # For more information, see https://github.com/toml-lang/toml
@@ -51,3 +48,5 @@ output = "text"
 node = "tcp://localhost:26657"
 # Transaction broadcasting mode (sync|async)
 broadcast-mode = "sync"' > ~/.titan/config/client.toml
+
+systemctl start titan
