@@ -7,7 +7,7 @@ cd ~ || exit
 systemctl stop titan
 
 # Back up the .titan directory. If something goes wrong in the middle, you can use the backup to restore and then execute again.
-mv ~/.titan ~/titan_bak_08_07
+mv ~/.titan ~/titan_bak_08_08
 
 # Copy directory and other information to the new path
 rsync -av --exclude "data" ~/titan_bak_08_08/* ~/.titan
