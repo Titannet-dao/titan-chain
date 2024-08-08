@@ -13,7 +13,7 @@ mv ~/.titan ~/titan_bak_08_07
 rsync -av --exclude "data" ~/titan_bak_08_07/* ~/.titan
 
 # Download new genesis file
-wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
+wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/test/genesis/genesis.json
 
 # Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
