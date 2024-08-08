@@ -26,5 +26,3 @@ echo '{
   "step": 0
 }' > ~/.titan/data/priv_validator_state.json
 
-
-systemctl start titan
