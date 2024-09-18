@@ -7,7 +7,7 @@ require (
 	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	github.com/cosmos/cosmos-sdk v0.50.7
 	github.com/cosmos/gogogateway v1.2.0 // indirect
-	github.com/cosmos/gogoproto v1.5.0
+	github.com/cosmos/gogoproto v1.7.0
 	github.com/cosmos/iavl v1.2.0
 	github.com/cosmos/ics23/go v0.10.0 // indirect
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
@@ -41,7 +41,7 @@ require (
 	cosmossdk.io/x/evidence v0.1.1
 	cosmossdk.io/x/feegrant v0.1.1
 	cosmossdk.io/x/nft v0.1.1
-	cosmossdk.io/x/tx v0.13.3
+	cosmossdk.io/x/tx v0.13.5
 	cosmossdk.io/x/upgrade v0.1.3
 	github.com/cometbft/cometbft v0.38.9
 	github.com/cosmos/cosmos-db v1.0.2
