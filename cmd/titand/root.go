@@ -61,7 +61,7 @@ func NewRootCmd() *cobra.Command {
 
 	rootCmd := &cobra.Command{
 		Use:           version.AppName,
-		Short:         "Wasm Daemon (server)",
+		Short:         "Titan Chain",
 		SilenceErrors: true,
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs
