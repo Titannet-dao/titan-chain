@@ -15,8 +15,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/CosmWasm/wasmd/x/wasm/keeper"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 // DefaultMaxIBCCallbackGas is the default value of maximum gas that an IBC callback can use.

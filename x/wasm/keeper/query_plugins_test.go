@@ -24,9 +24,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/query"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	"github.com/CosmWasm/wasmd/x/wasm/keeper"
-	"github.com/CosmWasm/wasmd/x/wasm/keeper/wasmtesting"
-	"github.com/CosmWasm/wasmd/x/wasm/types"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/x/wasm/keeper/wasmtesting"
+	"github.com/Titannet-dao/titan-chain/x/wasm/types"
 )
 
 func TestIBCQuerier(t *testing.T) {
