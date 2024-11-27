@@ -9,8 +9,8 @@ import (
 
 	simtestutil "github.com/cosmos/cosmos-sdk/testutil/sims"
 
-	"github.com/CosmWasm/wasmd/app/params"
-	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
+	"github.com/Titannet-dao/titan-chain/app/params"
+	wasmkeeper "github.com/Titannet-dao/titan-chain/x/wasm/keeper"
 )
 
 // MakeEncodingConfig creates a new EncodingConfig with all modules registered. For testing only
