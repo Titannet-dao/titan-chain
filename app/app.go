@@ -134,11 +134,15 @@ import (
 	"github.com/Titannet-dao/titan-chain/x/wasm"
 	wasmkeeper "github.com/Titannet-dao/titan-chain/x/wasm/keeper"
 	wasmtypes "github.com/Titannet-dao/titan-chain/x/wasm/types"
+
+	tokenfactorykeeper "github.com/nezha90/tokenfactory/x/tokenfactory/keeper"
+	tokenfactorymodule "github.com/nezha90/tokenfactory/x/tokenfactory/module"
+	tokenfactorytypes "github.com/nezha90/tokenfactory/x/tokenfactory/types"
 )
 
 const appName = "TitanApp"
 
-// We pull these out so we can set them with LDFLAGS in the Makefile
+// We pull these out we can set them with LDFLAGS in the Makefile
 var (
 	NodeDir      = ".titan"
 	Bech32Prefix = "titan"
@@ -175,10 +179,11 @@ var maccPerms = map[string][]string{
 	govtypes.ModuleName:            {authtypes.Burner},
 	nft.ModuleName:                 nil,
 	// non sdk modules
-	ibctransfertypes.ModuleName: {authtypes.Minter, authtypes.Burner},
-	ibcfeetypes.ModuleName:      nil,
-	icatypes.ModuleName:         nil,
-	wasmtypes.ModuleName:        {authtypes.Burner},
+	ibctransfertypes.ModuleName:  {authtypes.Minter, authtypes.Burner},
+	ibcfeetypes.ModuleName:       nil,
+	icatypes.ModuleName:          nil,
+	wasmtypes.ModuleName:         {authtypes.Burner},
+	tokenfactorytypes.ModuleName: {authtypes.Burner, authtypes.Minter, authtypes.Staking},
 }
 
 var (
@@ -218,6 +223,8 @@ type WasmApp struct {
 	NFTKeeper             nftkeeper.Keeper
 	ConsensusParamsKeeper consensusparamkeeper.Keeper
 	CircuitKeeper         circuitkeeper.Keeper
+
+	TokenFactoryKeeper tokenfactorykeeper.Keeper
 
 	IBCKeeper           *ibckeeper.Keeper // IBC Keeper must be a pointer in the app, so we can SetRouter on it correctly
 	IBCFeeKeeper        ibcfeekeeper.Keeper
@@ -324,6 +331,7 @@ func NewWasmApp(
 		capabilitytypes.StoreKey, ibcexported.StoreKey, ibctransfertypes.StoreKey, ibcfeetypes.StoreKey,
 		wasmtypes.StoreKey, icahosttypes.StoreKey,
 		icacontrollertypes.StoreKey,
+		tokenfactorytypes.StoreKey,
 	)
 
 	tkeys := storetypes.NewTransientStoreKeys(paramstypes.TStoreKey)
@@ -622,6 +630,15 @@ func NewWasmApp(
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
 
+	app.TokenFactoryKeeper = tokenfactorykeeper.NewKeeper(
+		appCodec,
+		runtime.NewKVStoreService(keys[tokenfactorytypes.StoreKey]),
+		logger,
+		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+		app.AccountKeeper,
+		app.BankKeeper,
+	)
+
 	wasmDir := filepath.Join(homePath, "wasm")
 	nodeConfig, err := wasm.ReadNodeConfig(appOpts)
 	if err != nil {
@@ -738,6 +755,8 @@ func NewWasmApp(
 		ibctm.AppModule{},
 		// sdk
 		crisis.NewAppModule(app.CrisisKeeper, skipGenesisInvariants, app.GetSubspace(crisistypes.ModuleName)), // always be last to make sure that it checks for all invariants and not only part of them
+		// token factory
+		tokenfactorymodule.NewAppModule(appCodec, app.TokenFactoryKeeper, app.AccountKeeper, app.BankKeeper),
 	)
 
 	// BasicModuleManager defines the module BasicManager is in charge of setting up basic,
@@ -781,6 +800,7 @@ func NewWasmApp(
 		icatypes.ModuleName,
 		ibcfeetypes.ModuleName,
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 	)
 
 	app.ModuleManager.SetOrderEndBlockers(
@@ -797,6 +817,7 @@ func NewWasmApp(
 		icatypes.ModuleName,
 		ibcfeetypes.ModuleName,
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 	)
 
 	// NOTE: The genutils module must occur after staking so that pools are
@@ -822,6 +843,7 @@ func NewWasmApp(
 		ibcfeetypes.ModuleName,
 		// wasm after ibc transfer
 		wasmtypes.ModuleName,
+		tokenfactorytypes.ModuleName,
 	}
 	app.ModuleManager.SetOrderInitGenesis(genesisModuleOrder...)
 	app.ModuleManager.SetOrderExportGenesis(genesisModuleOrder...)
@@ -1190,6 +1212,8 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(govtypes.ModuleName)
 	paramsKeeper.Subspace(crisistypes.ModuleName)
 
+	paramsKeeper.Subspace(tokenfactorytypes.ModuleName)
+
 	// register the IBC key tables for legacy param subspaces
 	keyTable := ibcclienttypes.ParamKeyTable()
 	keyTable.RegisterParamSet(&ibcconnectiontypes.Params{})
@@ -1199,5 +1223,6 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(icahosttypes.SubModuleName).WithKeyTable(icahosttypes.ParamKeyTable())
 
 	paramsKeeper.Subspace(wasmtypes.ModuleName)
+
 	return paramsKeeper
 }
