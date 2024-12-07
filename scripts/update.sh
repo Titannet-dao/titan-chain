@@ -33,6 +33,8 @@ wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v0.3.0
 
 mv ~/libwasmvm.x86_64.so /usr/local/lib/libwasmvm.x86_64.so
 
+sudo ldconfig
+
 mkdir ~/.titan/data
 # Build data/priv_validator_state.json 文件
 echo '{
