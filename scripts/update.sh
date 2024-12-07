@@ -31,7 +31,7 @@ mv ~/genesis.json ~/.titan/config/genesis.json
 
 wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v0.3.0/libwasmvm.x86_64.so
 
-mv ~/libwasmvm.x86_64.so /usr/local/bin/libwasmvm.x86_64.so
+mv ~/libwasmvm.x86_64.so /usr/local/lib/libwasmvm.x86_64.so
 
 mkdir ~/.titan/data
 # Build data/priv_validator_state.json 文件
