@@ -44,11 +44,11 @@ echo '# This is a TOML config file.
 ###############################################################################
 
 # The network chain ID
-chain-id = "titan-test-3"
+chain-id = "titan-test-4"
 # The keyring s backend, where the keys are stored (os|file|kwallet|pass|test|memory)
 keyring-backend = "os"
 # CLI output format (text|json)
-output = "text"
+output = "json"
 # <host>:<port> to Tendermint RPC interface for this chain
 node = "tcp://localhost:26657"
 # Transaction broadcasting mode (sync|async)
