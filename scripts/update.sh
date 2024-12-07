@@ -21,11 +21,17 @@ mv ~/.titan ~/titan_bak_test_3
 # Copy directory and other information to the new path
 rsync -av --exclude "data" ~/titan_bak_test_3/* ~/.titan
 
+rm ~/genesis.json
+
 # Download new genesis file
-wget -P ~/. https://raw.githubusercontent.com/Titannet-dao/titan-chain/main/genesis/genesis.json
+wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v0.3.0/genesis.json
 
 # Replace new genesis file
 mv ~/genesis.json ~/.titan/config/genesis.json
+
+wget -P ~/. https://github.com/Titannet-dao/titan-chain/releases/download/v0.3.0/libwasmvm.x86_64.so
+
+mv ~/libwasmvm.x86_64.so /usr/local/bin/libwasmvm.x86_64.so
 
 mkdir ~/.titan/data
 # Build data/priv_validator_state.json 文件
