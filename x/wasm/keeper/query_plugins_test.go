@@ -361,7 +361,7 @@ func TestContractInfoWasmQuerier(t *testing.T) {
 	specs := map[string]struct {
 		req    *wasmvmtypes.WasmQuery
 		mock   mockWasmQueryKeeper
-		expRes wasmvmtypes.ContractInfoResponse
+		express wasmvmtypes.ContractInfoResponse
 		expErr bool
 	}{
 		"all good": {
@@ -377,7 +377,7 @@ func TestContractInfoWasmQuerier(t *testing.T) {
 				},
 				IsPinnedCodeFn: func(ctx context.Context, codeID uint64) bool { return true },
 			},
-			expRes: wasmvmtypes.ContractInfoResponse{
+			express: wasmvmtypes.ContractInfoResponse{
 				CodeID:  1,
 				Creator: myCreatorAddr,
 				Admin:   myAdminAddr,
@@ -413,7 +413,7 @@ func TestContractInfoWasmQuerier(t *testing.T) {
 				},
 				IsPinnedCodeFn: func(ctx context.Context, codeID uint64) bool { return false },
 			},
-			expRes: wasmvmtypes.ContractInfoResponse{
+			express: wasmvmtypes.ContractInfoResponse{
 				CodeID:  1,
 				Creator: myCreatorAddr,
 				Admin:   myAdminAddr,
@@ -433,7 +433,7 @@ func TestContractInfoWasmQuerier(t *testing.T) {
 				},
 				IsPinnedCodeFn: func(ctx context.Context, codeID uint64) bool { return true },
 			},
-			expRes: wasmvmtypes.ContractInfoResponse{
+			express: wasmvmtypes.ContractInfoResponse{
 				CodeID:  1,
 				Creator: myCreatorAddr,
 				Pinned:  true,
@@ -451,7 +451,7 @@ func TestContractInfoWasmQuerier(t *testing.T) {
 			require.NoError(t, gotErr)
 			var gotRes wasmvmtypes.ContractInfoResponse
 			require.NoError(t, json.Unmarshal(gotBz, &gotRes))
-			assert.Equal(t, spec.expRes, gotRes)
+			assert.Equal(t, spec.express, gotRes)
 		})
 	}
 }
@@ -464,7 +464,7 @@ func TestCodeInfoWasmQuerier(t *testing.T) {
 	specs := map[string]struct {
 		req    *wasmvmtypes.WasmQuery
 		mock   mockWasmQueryKeeper
-		expRes wasmvmtypes.CodeInfoResponse
+		express wasmvmtypes.CodeInfoResponse
 		expErr bool
 	}{
 		"all good": {
@@ -483,7 +483,7 @@ func TestCodeInfoWasmQuerier(t *testing.T) {
 					}
 				},
 			},
-			expRes: wasmvmtypes.CodeInfoResponse{
+			express: wasmvmtypes.CodeInfoResponse{
 				CodeID:   1,
 				Creator:  myCreatorAddr,
 				Checksum: myRawChecksum,
@@ -518,7 +518,7 @@ func TestCodeInfoWasmQuerier(t *testing.T) {
 			require.NoError(t, gotErr)
 			var gotRes wasmvmtypes.CodeInfoResponse
 			require.NoError(t, json.Unmarshal(gotBz, &gotRes), string(gotBz))
-			assert.Equal(t, spec.expRes, gotRes)
+			assert.Equal(t, spec.express, gotRes)
 		})
 	}
 }
