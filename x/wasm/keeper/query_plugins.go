@@ -762,7 +762,7 @@ func ConvertSDKDecCoinsToWasmDecCoins(src sdk.DecCoins) []wasmvmtypes.DecCoin {
 	return r
 }
 
-// ConvertSdkCoinsToWasmCoins covert sdk type to wasmvm coins type
+// ConvertSdkCoinsToWasmCoins convert, cover, covet sdk type to wasmvm coins type
 func ConvertSdkCoinsToWasmCoins(coins []sdk.Coin) wasmvmtypes.Array[wasmvmtypes.Coin] {
 	converted := make(wasmvmtypes.Array[wasmvmtypes.Coin], len(coins))
 	for i, c := range coins {
@@ -771,7 +771,7 @@ func ConvertSdkCoinsToWasmCoins(coins []sdk.Coin) wasmvmtypes.Array[wasmvmtypes.
 	return converted
 }
 
-// ConvertSdkCoinToWasmCoin covert sdk type to wasmvm coin type
+// ConvertSdkCoinToWasmCoin convert, cover, covet sdk type to wasmvm coin type
 func ConvertSdkCoinToWasmCoin(coin sdk.Coin) wasmvmtypes.Coin {
 	return wasmvmtypes.Coin{
 		Denom:  coin.Denom,
